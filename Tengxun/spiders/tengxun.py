@@ -32,4 +32,4 @@ class TengxunSpider(scrapy.Spider):
             item['position_date'] = base.xpath('./td[5]/text()').extract()[0]
             yield item
 
-# 把293页的URL都给 引擎, 引擎给 调度器去入队列, 在给下载器
+# 把308页的URL都给 引擎, 引擎给 调度器去入队列, 在给下载器
