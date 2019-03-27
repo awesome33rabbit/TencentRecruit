@@ -45,3 +45,18 @@ class MysqlPipeline(object):
         except Exception as error:
             print(error)
         return item
+
+class MongoPipeline(object):
+    def __init__(self):
+        host = settings.MONGODB_HOST
+        port = settings.MONGODB_PORT
+
+        conn = pymongo.MongoClient(host=host, port=port)
+        db = conn.scrapy
+        self.myset = db.tengxun
+
+    def process_item(self, item, spider):
+        info = dict(item)
+        self.myset.insert(info)
+        return item
+
