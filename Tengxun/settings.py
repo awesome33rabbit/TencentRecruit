@@ -69,7 +69,13 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'Tengxun.pipelines.TengxunPipeline': 300,
+   'Tengxun.pipelines.MysqlPipeline': 400,
 }
+MYSQL_HOST = 'localhost'
+MYSQL_USER = 'root'
+MYSQL_PASSWD = '********'
+MYSQL_PORT = 3306
+MYSQL_DBNAME = 'scrapy'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
