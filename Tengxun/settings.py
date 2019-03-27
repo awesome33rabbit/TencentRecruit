@@ -70,12 +70,19 @@ DOWNLOADER_MIDDLEWARES = {
 ITEM_PIPELINES = {
    'Tengxun.pipelines.TengxunPipeline': 300,
    'Tengxun.pipelines.MysqlPipeline': 400,
+   'Tengxun.pipelines.MongoPipeline': 500,
 }
+
 MYSQL_HOST = 'localhost'
 MYSQL_USER = 'root'
 MYSQL_PASSWD = '********'
 MYSQL_PORT = 3306
 MYSQL_DBNAME = 'scrapy'
+
+MONGODB_HOST = 'localhost'
+MONGODB_PORT = 27017
+MONGODB_DBNAME = 'scrapy'
+MONGODB_SHEETNAME = 'tengxun'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
